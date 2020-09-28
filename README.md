@@ -1,8 +1,6 @@
 Nuxt.js Auth test app
 
-[Demo](https://nuxt-auth-testapp.netlify.app/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d4ad2dd4-0e08-449f-8c64-819535c6af07/deploy-status)](https://app.netlify.com/sites/nuxt-auth-testapp/deploys)
+[Demo](https://nuxt-auth-testapp.herokuapp.com/)
 
 ## Build Setup
 
