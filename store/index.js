@@ -1,5 +1,5 @@
 const cookieparser = process.server ? require('cookieparser') : undefined
-const config = require('./nuxt.config.js')
+const config = require('../nuxt.config')
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI(this.$config.apiSecret);
 
