@@ -1,4 +1,7 @@
 const cookieparser = process.server ? require('cookieparser') : undefined
+const config = require('./nuxt.config.js')
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI(this.$config.apiSecret);
 
 export const state = () => ({
   news: [],
@@ -18,8 +21,19 @@ export const mutations = {
 export const actions = {
   async fetchPosts({ commit }) {
     const posts = await this.$axios.$get(
-      `https://newsapi.org/v2/everything?q=apple&from=2020-09-27&to=2020-09-27&sortBy=popularit&apiKey=${ this.$config.apiSecret }`
+      `https://newsapi.org/v2/everything?q=apple&from=2020-09-27&to=2020-09-27&sortBy=popularity&apiKey=${ this.$config.apiSecret }`
     )
+    if (!config.dev) {
+      newsapi.v2.everything({
+        q: 'apple',
+        from: '2020-09-27',
+        to: '2020-09-27',
+        sortBy: 'popularity',
+      }).then(response => {
+        posts = response
+      });
+    }
+    
     commit('updateNews', posts.articles.slice(0, 10))
   },
   nuxtServerInit ({ commit }, { req }) {

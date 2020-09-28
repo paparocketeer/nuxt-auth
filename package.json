@@ -17,6 +17,7 @@
     "cookieparser": "^0.1.0",
     "core-js": "^3.6.5",
     "js-cookie": "^2.2.1",
+    "newsapi": "^2.4.1",
     "nuxt": "^2.14.5"
   },
   "devDependencies": {

@@ -18,6 +18,8 @@ export default {
     ]
   },
 
+  dev: process.env.NODE_ENV !== 'production',
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
