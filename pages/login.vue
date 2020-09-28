@@ -33,7 +33,7 @@
 import axios from 'axios'
 import { mapActions } from 'vuex'
 
-const Cookie = process.client ? require('js-cookie') : undefined
+const Cookie = require('js-cookie')
 
 export default {
   middleware: 'redirectOnAuth',
