@@ -1,7 +1,7 @@
 const cookieparser = process.server ? require('cookieparser') : undefined
 const config = require('../nuxt.config')
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI(this.$config.apiSecret);
+const newsapi = new NewsAPI('cbbeff8dfdcd48468b2d02bf413031af');
 
 export const state = () => ({
   news: [],
