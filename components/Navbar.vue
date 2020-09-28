@@ -9,12 +9,15 @@
         <b-nav-item to="/news">News</b-nav-item>
         <b-nav-item to="/profile">Profile</b-nav-item>
       </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto" v-if="!$store.state.auth">
         <b-nav-item to="/login">Login</b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto" v-else>
         <b-nav-item-dropdown right>
+          <!-- Using 'button-content' slot -->
           <template v-slot:button-content>
             <em>Admin</em>
           </template>
@@ -27,7 +30,7 @@
 </template>
 
 <script>
-const Cookie = require('js-cookie')
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
