@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const Cookie = require('js-cookie')
+const Cookie = process.client ? require('js-cookie') : undefined
 
 export default {
   methods: {
